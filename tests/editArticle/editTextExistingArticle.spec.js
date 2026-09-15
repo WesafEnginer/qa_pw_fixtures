@@ -1,14 +1,13 @@
 import { test } from '../_fixtures/fixtures';
-import { generateNewArticleData } from '../../src/common/testData/generateNewArticleData';
 import { createNewArticle } from '../../src/ui/actions/article/createNewArticle';
 import { signUpUser } from '../../src/ui/actions/auth/signUpUser';
 
 let article;
 let newText;
 
-test.beforeEach(async ({ page, user, homePage, articleWithoutTags }) => {
+test.beforeEach(async ({ page, user, articleWithoutTags }) => {
   article = articleWithoutTags;
-  newText = generateNewArticleData().text;
+  newText = articleWithoutTags.text;
 
   await signUpUser(page, user);
   await createNewArticle(page, article);

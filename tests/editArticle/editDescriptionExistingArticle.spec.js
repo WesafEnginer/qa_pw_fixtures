@@ -1,5 +1,4 @@
 import { test } from '../_fixtures/fixtures';
-import { generateNewArticleData } from '../../src/common/testData/generateNewArticleData';
 import { createNewArticle } from '../../src/ui/actions/article/createNewArticle';
 import { signUpUser } from '../../src/ui/actions/auth/signUpUser';
 
@@ -8,7 +7,7 @@ let newDescription;
 
 test.beforeEach(async ({ page, user, homePage, articleWithoutTags }) => {
   article = articleWithoutTags;
-  newDescription = generateNewArticleData().description;
+  newDescription = articleWithoutTags.description;
 
   await signUpUser(page, user);
   await createNewArticle(page, article);
