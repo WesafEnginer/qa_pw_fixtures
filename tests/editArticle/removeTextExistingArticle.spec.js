@@ -6,8 +6,8 @@ import { TEXT_CANNOT_BE_EMPTY } from '../../src/ui/constants/articleErrorMessage
 
 let article;
 
-test.beforeEach(async ({ page, user, homePage }) => {
-  article = generateNewArticleData(undefined, 1);
+test.beforeEach(async ({ page, user, homePage, articleWithoutTags }) => {
+  article = articleWithoutTags;
 
   await signUpUser(page, user);
   await createNewArticle(page, article);

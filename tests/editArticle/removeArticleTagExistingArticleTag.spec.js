@@ -5,8 +5,8 @@ import { signUpUser } from '../../src/ui/actions/auth/signUpUser';
 
 let article;
 
-test.beforeEach(async ({ page, user, homePage }) => {
-  article = generateNewArticleData(undefined, 1);
+test.beforeEach(async ({ page, user, homePage, articleWithOneTag }) => {
+  article = articleWithOneTag;
 
   await signUpUser(page, user);
   await createNewArticle(page, article);
